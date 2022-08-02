@@ -1,0 +1,15 @@
+
+
+.hero{
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-overlay{
+  color: rgb(3, 27, 240);
+  background-color: darkgray;
+  padding: 10px;
+  border-radius: 6px;
+}
