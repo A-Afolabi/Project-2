@@ -22,5 +22,6 @@ const Seasons = () => {
   return (
     <h2>Available Seasons</h2>
   )
+
 }
 export default Seasons
