@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom'
 import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
 import Container from 'react-bootstrap/Container'
-import { NavDropdown } from 'react-bootstrap'
 
 const SiteNarbar = () => (
   <Navbar bg="dark" variant="dark" expand="sm">
@@ -15,7 +14,7 @@ const SiteNarbar = () => (
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse className="justify-content-end">
         <Nav.Item>
-          <Link className='btn btn-grey' to="/MoreLeagues">Find A League?</Link>
+          <Link className='btn btn-grey' to="/Leagues">Find A League?</Link>
         </Nav.Item>
       </Navbar.Collapse>
     </Container>

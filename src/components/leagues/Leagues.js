@@ -8,7 +8,7 @@ import Col from 'react-bootstrap/Col'
 import Card from 'react-bootstrap/Card'
 
 
-const MoreLeagues = () => {
+const Leagues = () => {
 
   const [leagues, setLeagues] = useState([])
   const [hasError, setHasError] = useState({ error: false, message: '' })
@@ -16,7 +16,7 @@ const MoreLeagues = () => {
   useEffect(() => {
     const allLeagues = async () => {
       try {
-        const { data } = await axios.get('https://api-football-standings.azharimm.site/leagues')
+        const { data } = await axios.get('https://football-standings-api-git-master-azharimm.vercel.app/leagues')
         setLeagues(data.data)
       } catch (err) {
         setHasError({ error: true, message: err.message })
@@ -32,7 +32,7 @@ const MoreLeagues = () => {
           <>
             {leagues.map((league, _id) => {
               const { name, logos } = league
-              console.log(name, league)
+              // console.log(name, league)
               return (
                 <Col key={_id} md="4" lg="4" className='league mb-4'>
                   <Link to={`/Leagues/${_id}/`}>
@@ -57,4 +57,4 @@ const MoreLeagues = () => {
     </Container>
   )
 }
-export default MoreLeagues
+export default Leagues

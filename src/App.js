@@ -4,11 +4,9 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 //import components for each page
 import Home from './components/Home'
-import EPL from './components/EPL'
 import SiteNarbar from './components/SiteNavbar'
-import LaLiga from './components/LaLiga'
-import MoreLeagues from './components/leagues/MoreLeagues'
-import Tables from './components/leagues/Tables'
+import Leagues from './components/leagues/Leagues'
+// import Standings from './components/leagues/Standings'
 import Seasons from './components/leagues/Seasons'
 
 const App = () => {
@@ -23,12 +21,9 @@ const App = () => {
         <Routes>
           {/* First route will be Home page */}
           <Route path="/" element={<Home />} />
-          {/* following pages for each league */}
-          <Route path="EPL" element={<EPL />} />
-          <Route path="LaLiga" element={<LaLiga />} />
-          <Route path="MoreLeagues" element={<MoreLeagues />} />
-          <Route path="leagues/:leagueId" element={<Seasons />} />
-          <Route path="leagues/:leagueId/standings" element={<Tables />} />
+          <Route path="Leagues" element={<Leagues />} />
+          <Route path="Leagues/:leagueId" element={<Seasons />} />
+          {/* <Route path="Leagues/:leagueId/standings" element={<Standings />} /> */}
         </Routes>
       </BrowserRouter>
     </div >

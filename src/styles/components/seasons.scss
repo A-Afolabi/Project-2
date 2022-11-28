@@ -1,3 +1,40 @@
 h2{
   color: white
 }
+
+.logo{
+  display: flex;
+  justify-content: center;
+  margin: 0 33% 0 33%;
+  padding: 33px;
+  p{
+    font-size:xx-large;
+    font-weight: bold;
+    color: black;
+    text-decoration: none;
+}
+}
+
+.card{
+  border-radius: 17%;
+  background-color: white ;
+  color: black;
+  font-weight: bolder;
+  opacity: .7;
+  &:hover{
+    border: 3px solid black;
+  }
+}
+
+a{
+  text-decoration: none;
+  
+}
+
+h2{
+  margin-left: 75px;
+  padding: 25px;
+  color: black;
+  font-weight: bolder;
+  font-size: 900;
+}
