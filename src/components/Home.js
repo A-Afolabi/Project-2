@@ -1,17 +1,27 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+
+import disneyLogo from './assets/disneyLogo.png'
 
 const Home = () => (
-  //The aligning and "darkmode" theme for text and screen.
-  //'hero' part can be called anything, just so we can target it later when styling
-  <div className="hero text-center">
-    <div className='hero-overlay'>
-      {/* size of text depending on size of the screen */}
-      <h1 className="display-3">
-        2020/21 League Standings
-      </h1>
-      <p className='lead'>Find out who became champions, who got relegated and more from a range of different leagues</p>
+  <>
+    <div className="logo text-center">
+      <div className="logo-overlay">
+        <div className="dis-logo">
+          <img src={disneyLogo} alt="Disney" />
+        </div>
+      </div>
     </div>
-  </div>
+    <h3 className="lead text-center">
+      Find out more about your favourite Disney characters.
+    </h3>
+    <p className="p-tag text-center">
+      You may discover something new to watch on Disney+
+    </p>
+    <div className="home-btn">
+      <Link to="Characters" className="btn">Find Character</Link>
+    </div>
+  </>
 )
 
 export default Home

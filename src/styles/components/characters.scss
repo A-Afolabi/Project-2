@@ -1,0 +1,50 @@
+.disney-logo{
+  padding: 5vh;
+  padding-top: 5%;
+}
+form{
+  display: flex;
+  justify-content: center;
+  padding-bottom: 5vh;
+  #disney-Id{
+    width: 75vh;
+    height: 5vh;
+    margin-left: 20px;
+    border-radius: 10px;
+  }
+}
+.card{
+  border-radius: 10%;
+  font-weight: bolder;
+  opacity: .6;
+  &:hover{
+    opacity: 1;
+    // border: 2px solid white;
+    color: white;
+  }
+}
+.card-image{
+  img{
+    border-radius: 20%;
+  }
+}
+h2{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+.disChar{
+  a{
+    .h-100{
+      .text-center{
+        opacity: 1;
+      }
+    }
+  }
+}
+.disney-logo{
+  img{
+    width:60%;
+  }
+}

@@ -1,15 +1,37 @@
-
-
-.hero{
-  flex-grow: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.dis-logo {
+  padding: 5vh;
+}
+.lead {
+  font-weight: bold;
+  font-size: 4vh;
+  padding-top: 3%;
+}
+.p-tag {
+  padding-top: 1%;
+  font-style: italic;
+  font-size: 3vh;
+}
+.home-btn{
+  .btn {
+    display: flex;
+    justify-content: center;
+    background-color: navy;
+    color: white;
+    width: 20%;
+    margin: auto;
+    align-items: center;
+    align-content: center;
+  }
+  padding-top: 5vh;
+  padding-bottom: 10%;
 }
 
-.hero-overlay{
-  color: rgb(3, 27, 240);
-  background-color: darkgray;
-  padding: 10px;
-  border-radius: 6px;
+.dis-logo{
+  img{
+    padding-top: 5vh;
+    width:60%;
+    @media (max-width: 550px) {
+      width: 100%;
+    }
+  }
 }

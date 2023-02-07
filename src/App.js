@@ -4,10 +4,9 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 //import components for each page
 import Home from './components/Home'
-import SiteNarbar from './components/SiteNavbar'
-import Leagues from './components/leagues/Leagues'
-// import Standings from './components/leagues/Standings'
-import Seasons from './components/leagues/Seasons'
+import SiteNavbar from './components/SiteNavbar'
+import Characters from './components/Characters'
+import OneChar from './components/OneChar'
 
 const App = () => {
   return (
@@ -16,14 +15,13 @@ const App = () => {
       <BrowserRouter>
         {/* SiteNavbar to navigate between links of different leagues. Therefore needs to be with BrowserRouter.*/}
         {/* This will be on every page and therefore does not need to sit within Routes */}
-        <SiteNarbar />
+        <SiteNavbar />
         {/* Wrapping all our compnents that represent pages on a specific route inside, using Route */}
         <Routes>
           {/* First route will be Home page */}
           <Route path="/" element={<Home />} />
-          <Route path="Leagues" element={<Leagues />} />
-          <Route path="Leagues/:leagueId" element={<Seasons />} />
-          {/* <Route path="Leagues/:leagueId/standings" element={<Standings />} /> */}
+          <Route path="Characters" element={<Characters />} />
+          <Route path="Characters/:disneyId" element={<OneChar />} />
         </Routes>
       </BrowserRouter>
     </div >

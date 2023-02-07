@@ -5,7 +5,7 @@ import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
 import Container from 'react-bootstrap/Container'
 
-const SiteNarbar = () => (
+const SiteNavbar = () => (
   <Navbar bg="dark" variant="dark" expand="sm">
     <Container>
       <Navbar.Brand>
@@ -14,11 +14,11 @@ const SiteNarbar = () => (
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse className="justify-content-end">
         <Nav.Item>
-          <Link className='btn btn-grey' to="/Leagues">Find A League?</Link>
+          <Link className='btn btn-grey' to="/Characters">Find a Character?</Link>
         </Nav.Item>
       </Navbar.Collapse>
     </Container>
   </Navbar>
 )
 
-export default SiteNarbar
+export default SiteNavbar

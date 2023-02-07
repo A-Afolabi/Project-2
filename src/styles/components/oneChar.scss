@@ -1,0 +1,27 @@
+.img-name {
+  img {
+    border-radius: 25%;
+    display: flex;
+    // padding-right: 5vh;
+  }
+}
+
+.d-block {
+  padding-bottom: 5%;
+  font-weight: bolder;
+  font-size: 18vh;
+}
+
+.char-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 10vh;
+}
+
+.name-info{
+  display: flex;
+}
+.other-info{
+  padding-top: 5%;
+}
