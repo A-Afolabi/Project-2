@@ -89,18 +89,20 @@ const Characters = () => {
                 )
               })}
             </Row>
-            <Row className="pages">
-              {currentPage !== 1 ?
-                <button className="btn" onClick={prevPage}>Previous Page</button>
-                :
-                <button disabled className="btn" onClick={prevPage}>Previous Page</button>
-              }
-              Page {currentPage} of 149
-              {currentPage !== 149 ?
-                <button className="btn" onClick={nextPage}>Next Page</button>
-                :
-                <button disabled className="btn" onClick={nextPage}>Next Page</button>
-              }
+            <Row>
+              <div className="pages">
+                {currentPage !== 1 ?
+                  <button className="btn" onClick={prevPage}>Previous Page</button>
+                  :
+                  <button disabled className="btn" onClick={prevPage}>Previous Page</button>
+                }
+                <p>Page {currentPage} of 149</p>
+                {currentPage !== 149 ?
+                  <button className="btn" onClick={nextPage}>Next Page</button>
+                  :
+                  <button disabled className="btn" onClick={nextPage}>Next Page</button>
+                }
+              </div>
             </Row>
           </>
           :

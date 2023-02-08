@@ -37,98 +37,125 @@ const OneChar = () => {
         <img src={disneyLogo} alt="disney" />
       </div>
       <Container className="mt-4">
-        <Row>
-          {char ?
-            <div className="char-card">
-              <Col md="5">
-                <div className="img-name">
-                  <img className="w-100" src={char.imageUrl} alt={disneyLogo} />
-                </div>
-              </Col>
-              <Col md="5" className="name-info">
-                <div className="other-info-name">
-                  <h1><em className='d-block text-center'>{char.name}</em></h1>
-                  <div className="other-info">
-                    {char.films.length ?
-                      <div>
-                        <h5 >Films: </h5>
-                        <ul className='films-display'>
-                          {char.films.map((film, _id) => (
-                            <li key={_id}><em>
-                              {film}
-                            </em></li>
-                          ))}
-                        </ul>
-                      </div>
-                      :
-                      []
-                    }
-                    {char.parkAttractions.length ?
-                      <div>
-                        <h5>Park Attractions: </h5>
-                        <ul className='park-display'>
-                          {char.parkAttractions.map((park, _id) => (
-                            <li key={_id}><em>
-                              {park}
-                            </em></li>
-                          ))}
-                        </ul>
-                      </div>
-                      :
-                      []
-                    }
-                    {char.shortFilms.length ?
-                      <div>
-                        <h5>Short Films: </h5>
-                        <ul className='shortFilms-display'>
-                          {char.shortFilms.map((sFilm, _id) => (
-                            <li key={_id}><em>
-                              {sFilm}
-                            </em></li>
-                          ))}
-                        </ul>
-                      </div>
-                      :
-                      []
-                    }
-                    {char.tvShows.length ?
-                      <div>
-                        <h5>TV Shows: </h5>
-                        <ul className='tvShows-display'>
-                          {char.tvShows.map((show, _id) => (
-                            <li key={_id}><em>
-                              {show}
-                            </em></li>
-                          ))}
-                        </ul>
-                      </div>
-                      :
-                      []
-                    }
-                    {char.videoGames.length ?
-                      <div>
-                        <h5>Video Games: </h5>
-                        <ul className='games-display'>
-                          {char.videoGames.map((games, _id) => (
-                            <li key={_id}><em>
-                              {games}
-                            </em></li>
-                          ))}
-                        </ul>
-                      </div>
-                      :
-                      []
-                    }
+        {char ?
+          <div className="char-card">
+            <Row>
+              <div className="img-name">
+                <Col md="5">
+                  <div className="char-img">
+                    <img className="w-100" src={char.imageUrl} alt={disneyLogo} />
                   </div>
-                </div>
-              </Col>
+                </Col>
+                <Col md="5" className="name-info">
+                  <div className="other-info-name">
+                    <h1><em className='d-block text-center'>{char.name}</em></h1>
+                  </div>
+                </Col>
+              </div>
+            </Row>
+            <div className="other-info">
+              <Row>
+                <Col>
+                  {char.films.length ?
+                    <div md="5">
+                      <h5 >Films: </h5>
+                      <ul className='films-display'>
+                        {char.films.map((film, _id) => (
+                          <li key={_id}><em>
+                            {film}
+                          </em></li>
+                        ))}
+                      </ul>
+                    </div>
+                    :
+                    ''
+                  }
+                </Col>
+              </Row>
+              {/* <br /> */}
+              <Row>
+                <Col>
+                  {char.parkAttractions.length ?
+                    <div md="5">
+                      <h5>Park Attractions: </h5>
+                      <ul className='park-display'>
+                        {char.parkAttractions.map((park, _id) => (
+                          <li key={_id}><em>
+                            {park}
+                          </em></li>
+                        ))}
+                      </ul>
+                    </div>
+                    :
+                    ''
+                  }
+                </Col>
+              </Row>
+              {/* <br /> */}
+              <Row>
+                <Col>
+                  {char.shortFilms.length ?
+                    <div md="5">
+                      <h5>Short Films: </h5>
+                      <ul className='shortFilms-display'>
+                        {char.shortFilms.map((sFilm, _id) => (
+                          <li key={_id}><em>
+                            {sFilm}
+                          </em></li>
+                        ))}
+                      </ul>
+                    </div>
+                    :
+                    ''
+                  }
+                </Col>
+              </Row>
+              {/* <br /> */}
+              <Row>
+                <Col>
+                  {char.tvShows.length ?
+                    <div md="5">
+                      <h5>TV Shows: </h5>
+                      <ul className='tvShows-display'>
+                        {char.tvShows.map((show, _id) => (
+                          <li key={_id}><em>
+                            {show}
+                          </em></li>
+                        ))}
+                      </ul>
+                    </div>
+                    :
+                    ''
+                  }
+                </Col>
+              </Row>
+              {/* <br /> */}
+              <Row>
+                <Col>
+                  {char.videoGames.length ?
+                    <div md="5">
+                      <h5>Video Games: </h5>
+                      <ul className='games-display'>
+                        {char.videoGames.map((games, _id) => (
+                          <li key={_id}><em>
+                            {games}
+                          </em></li>
+                        ))}
+                      </ul>
+                    </div>
+                    :
+                    ''
+                  }
+                </Col>
+              </Row>
+              <br />
             </div>
-            :
-            <h2 className="text-center">
-              {hasError.error ? 'Hmm...This does not look like the character you wanted 🤔. Somethings gone wrong' : 'Loading...'}
-            </h2>
-          }
-        </Row>
+          </div>
+          :
+          <h2 className="text-center">
+            {hasError.error ? 'Hmm...This does not look like the character you wanted 🤔. Somethings gone wrong' : 'Loading...'}
+          </h2>
+        }
       </Container>
     </div>
   )
