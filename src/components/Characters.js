@@ -14,19 +14,33 @@ const Characters = () => {
 
   const [disneyChar, setDisneyChar] = useState([])
   const [hasError, setHasError] = useState(false)
+  const [page, setPage] = useState(1)
+
+  const currentPage = page
 
   useEffect(() => {
     const AllChar = async () => {
       try {
-        const { data } = await axios.get('https://api.disneyapi.dev/characters')
-        console.log(data.data)
+        const { data } = await axios.get(`https://api.disneyapi.dev/characters?page=${page}`)
+        // console.log(data.data)
         setDisneyChar(data.data)
       } catch (err) {
         setHasError({ error: true, message: err.message })
       }
     }
     AllChar()
-  }, [])
+  }, [page])
+
+
+
+  const nextPage = () => {
+    page < 149 && setPage(page + 1)
+    // console.log(e)
+  }
+  const prevPage = () => {
+    page > 1 && setPage(page - 1)
+    // console.log(e)
+  }
 
   const handleSubmit = () => {
 
@@ -37,14 +51,26 @@ const Characters = () => {
       <div className="disney-logo text-center">
         <img src={disneyLogo} alt="disney" />
       </div>
-      <form onSubmit={handleSubmit}>
-        <input type="text" maxLength='500' id="disney-Id" placeholder=" Search Character..." />
-        {/* Maybe another input */}
-      </form>
+      <div className="search">
+        {currentPage !== 1 ?
+          <button className="btn" onClick={prevPage}>Previous Page</button>
+          :
+          <button disabled className="btn" onClick={prevPage}>Previous Page</button>
+        }
+        <form onSubmit={handleSubmit}>
+          <input type="text" maxLength='500' id="disney-Id" placeholder=" Search Character..." />
+          {/* Maybe another input */}
+        </form>
+        {currentPage !== 149 ?
+          <button className="btn" onClick={nextPage}>Next Page</button>
+          :
+          <button disabled className="btn" onClick={nextPage}>Next Page</button>
+        }
+      </div>
       <Container>
-        <Row>
-          {disneyChar.length ?
-            <>
+        {disneyChar.length ?
+          <>
+            <Row>
               {disneyChar.map((charDis, i) => {
                 const { name, imageUrl, _id } = charDis
                 return (
@@ -62,13 +88,26 @@ const Characters = () => {
                   </Col>
                 )
               })}
-            </>
-            :
-            <h2>
-              {hasError.error ? 'Hmm...This doesn\'t look like the Disney characters. Somethings on wrong' : 'Loading...'}
-            </h2>
-          }
-        </Row>
+            </Row>
+            <Row className="pages">
+              {currentPage !== 1 ?
+                <button className="btn" onClick={prevPage}>Previous Page</button>
+                :
+                <button disabled className="btn" onClick={prevPage}>Previous Page</button>
+              }
+              Page {currentPage} of 149
+              {currentPage !== 149 ?
+                <button className="btn" onClick={nextPage}>Next Page</button>
+                :
+                <button disabled className="btn" onClick={nextPage}>Next Page</button>
+              }
+            </Row>
+          </>
+          :
+          <h2 className="mb-3">
+            {hasError.error ? 'Hmm...This doesn\'t look like Disney characters 🤔. Somethings gone wrong' : 'Loading...'}
+          </h2>
+        }
       </Container>
     </div >
   )

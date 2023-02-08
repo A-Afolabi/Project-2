@@ -5,9 +5,9 @@
 form{
   display: flex;
   justify-content: center;
-  padding-bottom: 5vh;
+  // padding-bottom: 5vh;
   #disney-Id{
-    width: 75vh;
+    width: 50vh;
     height: 5vh;
     margin-left: 20px;
     border-radius: 10px;
@@ -47,4 +47,34 @@ h2{
   img{
     width:60%;
   }
+}
+.pages{
+  .btn {
+    display: flex;
+    justify-content: center;
+    background-color: navy;
+    color: white;
+    width: 20%;
+    margin: auto;
+  }
+  padding-top: 5vh;
+  padding-bottom: 5%;
+  .currentPage{
+    // display: flex;
+    // justify-content: center;
+  }
+}
+.search{
+  .btn {
+    display: flex;
+    justify-content: center;
+    background-color: navy;
+    color: white;
+    width: 15%;
+    margin: auto;
+  }
+  display: flex;
+  align-items: center;
+  padding-top: 5vh;
+  padding-bottom: 5%;
 }

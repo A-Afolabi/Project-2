@@ -20,12 +20,8 @@ const OneChar = () => {
   useEffect(() => {
     const getOneChar = async () => {
       try {
-        // for (let i = 1; i >= 149; i++) {
         const { data } = await axios.get(`https://api.disneyapi.dev/characters/${disneyId}`)
-        // const { data } = await axios.get(`https://api.disneyapi.dev/characters/${disneyId}?page=${i}`).then((res) =>
         setChar(data)
-        // )
-        // }
         console.log(data)
       } catch (err) {
         setHasError({ error: true, message: err.message })
@@ -57,9 +53,11 @@ const OneChar = () => {
                       <div>
                         <h5 >Films: </h5>
                         <ul className='films-display'>
-                          {char.films.map(film => {
-                            return <li><em>{film}</em></li>
-                          })}
+                          {char.films.map((film, _id) => (
+                            <li key={_id}><em>
+                              {film}
+                            </em></li>
+                          ))}
                         </ul>
                       </div>
                       :
@@ -69,9 +67,11 @@ const OneChar = () => {
                       <div>
                         <h5>Park Attractions: </h5>
                         <ul className='park-display'>
-                          {char.parkAttractions.map(park => {
-                            return <li><em>{park}</em></li>
-                          })}
+                          {char.parkAttractions.map((park, _id) => (
+                            <li key={_id}><em>
+                              {park}
+                            </em></li>
+                          ))}
                         </ul>
                       </div>
                       :
@@ -81,9 +81,11 @@ const OneChar = () => {
                       <div>
                         <h5>Short Films: </h5>
                         <ul className='shortFilms-display'>
-                          {char.shortFilms.map(sFilm => {
-                            return <li><em>{sFilm}</em></li>
-                          })}
+                          {char.shortFilms.map((sFilm, _id) => (
+                            <li key={_id}><em>
+                              {sFilm}
+                            </em></li>
+                          ))}
                         </ul>
                       </div>
                       :
@@ -93,9 +95,11 @@ const OneChar = () => {
                       <div>
                         <h5>TV Shows: </h5>
                         <ul className='tvShows-display'>
-                          {char.tvShows.map(show => {
-                            return <li><em>{show}</em></li>
-                          })}
+                          {char.tvShows.map((show, _id) => (
+                            <li key={_id}><em>
+                              {show}
+                            </em></li>
+                          ))}
                         </ul>
                       </div>
                       :
@@ -105,9 +109,11 @@ const OneChar = () => {
                       <div>
                         <h5>Video Games: </h5>
                         <ul className='games-display'>
-                          {char.videoGames.map(games => {
-                            return <li><em>{games}</em></li>
-                          })}
+                          {char.videoGames.map((games, _id) => (
+                            <li key={_id}><em>
+                              {games}
+                            </em></li>
+                          ))}
                         </ul>
                       </div>
                       :
@@ -119,7 +125,7 @@ const OneChar = () => {
             </div>
             :
             <h2 className="text-center">
-              {hasError.error ? 'Hmm...This does not look like the character you wanted. Somethings on wrong' : 'Loading...'}
+              {hasError.error ? 'Hmm...This does not look like the character you wanted 🤔. Somethings gone wrong' : 'Loading...'}
             </h2>
           }
         </Row>
