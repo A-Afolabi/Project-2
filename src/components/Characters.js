@@ -22,7 +22,7 @@ const Characters = () => {
     const AllChar = async () => {
       try {
         const { data } = await axios.get(`https://api.disneyapi.dev/characters?page=${page}`)
-        // console.log(data.data)
+        console.log(data.data)
         setDisneyChar(data.data)
       } catch (err) {
         setHasError({ error: true, message: err.message })
@@ -35,11 +35,9 @@ const Characters = () => {
 
   const nextPage = () => {
     page < 149 && setPage(page + 1)
-    // console.log(e)
   }
   const prevPage = () => {
     page > 1 && setPage(page - 1)
-    // console.log(e)
   }
 
   const handleSubmit = () => {

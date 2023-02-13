@@ -1,6 +1,9 @@
 .disney-logo{
   padding: 5vh;
   padding-top: 5%;
+  @media (max-width: 500px) {
+    padding: 5vh;
+  }
 }
 form{
   display: flex;
@@ -55,6 +58,7 @@ h2{
     color: white;
     width: 20%;
     margin: auto;
+    font-weight: bold;
   }
   display: flex;
   align-items: center;
@@ -72,11 +76,43 @@ h2{
     color: white;
     width: 15%;
     margin: auto;
+    font-weight: bold;
+    @media (max-width: 950px) {
+      display: none;
+    }
   }
+  @media (max-width: 950px) {
+    display: flex;
+    justify-content: center;
+  form{
+    #disney-Id{
+      width: 60vh;
+      height: 5vh;
+      border-radius: 10px;
+      margin-left: auto;
+    }
+  }
+}
   display: flex;
   align-items: center;
-  padding-top: 5vh;
+  padding-top: 5%;
   padding-bottom: 5%;
+  @media (max-width: 750px) {
+    display: flex;
+    justify-content: center;
+    form{
+      #disney-Id{
+        width: 60vh;
+        height: 5vh;
+        border-radius: 10px;
+        margin-left: auto;
+        @media (max-width: 475px ) {
+          width: 40vh;
+          margin-left: auto;
+        }
+      }
+    }
+  }
 }
 p{
   display: flex;

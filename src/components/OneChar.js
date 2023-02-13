@@ -48,15 +48,15 @@ const OneChar = () => {
                 </Col>
                 <Col md="5" className="name-info">
                   <div className="other-info-name">
-                    <h1><em className='d-block text-center'>{char.name}</em></h1>
+                    <h1><em className='name text-center'>{char.name}</em></h1>
                   </div>
                 </Col>
               </div>
             </Row>
             <div className="other-info">
-              <Row>
-                <Col>
-                  {char.films.length ?
+              {char.films.length ?
+                <Row>
+                  <Col>
                     <div md="5">
                       <h5 >Films: </h5>
                       <ul className='films-display'>
@@ -67,15 +67,14 @@ const OneChar = () => {
                         ))}
                       </ul>
                     </div>
-                    :
-                    ''
-                  }
-                </Col>
-              </Row>
-              {/* <br /> */}
-              <Row>
-                <Col>
-                  {char.parkAttractions.length ?
+                  </Col>
+                </Row>
+                :
+                ''
+              }
+              {char.parkAttractions.length ?
+                <Row>
+                  <Col>
                     <div md="5">
                       <h5>Park Attractions: </h5>
                       <ul className='park-display'>
@@ -86,15 +85,14 @@ const OneChar = () => {
                         ))}
                       </ul>
                     </div>
-                    :
-                    ''
-                  }
-                </Col>
-              </Row>
-              {/* <br /> */}
-              <Row>
-                <Col>
-                  {char.shortFilms.length ?
+                  </Col>
+                </Row>
+                :
+                ''
+              }
+              {char.shortFilms.length ?
+                <Row>
+                  <Col>
                     <div md="5">
                       <h5>Short Films: </h5>
                       <ul className='shortFilms-display'>
@@ -105,15 +103,14 @@ const OneChar = () => {
                         ))}
                       </ul>
                     </div>
-                    :
-                    ''
-                  }
-                </Col>
-              </Row>
-              {/* <br /> */}
-              <Row>
-                <Col>
-                  {char.tvShows.length ?
+                  </Col>
+                </Row>
+                :
+                ''
+              }
+              {char.tvShows.length ?
+                <Row>
+                  <Col>
                     <div md="5">
                       <h5>TV Shows: </h5>
                       <ul className='tvShows-display'>
@@ -124,15 +121,14 @@ const OneChar = () => {
                         ))}
                       </ul>
                     </div>
-                    :
-                    ''
-                  }
-                </Col>
-              </Row>
-              {/* <br /> */}
-              <Row>
-                <Col>
-                  {char.videoGames.length ?
+                  </Col>
+                </Row>
+                :
+                ''
+              }
+              {char.videoGames.length ?
+                <Row>
+                  <Col>
                     <div md="5">
                       <h5>Video Games: </h5>
                       <ul className='games-display'>
@@ -143,11 +139,11 @@ const OneChar = () => {
                         ))}
                       </ul>
                     </div>
-                    :
-                    ''
-                  }
-                </Col>
-              </Row>
+                  </Col>
+                </Row>
+                :
+                ''
+              }
               <br />
             </div>
           </div>

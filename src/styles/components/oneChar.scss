@@ -2,11 +2,9 @@
   img {
     border-radius: 25%;
     display: flex;
-    // padding-right: 5vh;
   }
 }
-.d-block {
-  padding-bottom: 5%;
+.name {
   font-weight: bolder;
   font-size: 18vh;
 }
@@ -28,7 +26,24 @@
 }
 .img-name{
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   align-content: center;
+  @media (max-width: 1000px) {
+    flex-wrap: wrap;
+    .name{
+      font-size: 15vh;
+    }
+  }
+  @media (max-width: 920px) {
+    padding-bottom: 5vh;
+    .name{
+    font-size: 8vh;
+    }
+  }
+  @media (max-width: 420px) {
+    .name-info{
+      padding-top: 3vh;
+    }
+  }
 }
