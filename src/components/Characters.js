@@ -69,7 +69,7 @@ const Characters = () => {
         {disneyChar.length ?
           <>
             <Row>
-              {disneyChar.map((charDis, i) => {
+              {disneyChar.map((charDis, _id) => {
                 const { name, imageUrl, _id } = charDis
                 return (
                   <Col key={_id} sm="6" md="4" lg="3" className="disChar mb-4">

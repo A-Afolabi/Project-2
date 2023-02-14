@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
-import { useParams, Link } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 
 import disneyLogo from './assets/disneyLogo.png'
 
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
-import Card from 'react-bootstrap/Card'
 
 const OneChar = () => {
   const [char, setChar] = useState(null)
