@@ -21,8 +21,8 @@ const Characters = () => {
   useEffect(() => {
     const AllChar = async () => {
       try {
-        const { data } = await axios.get(`https://api.disneyapi.dev/characters?page=${page}`)
-        console.log(data.data)
+        const { data } = await axios.get(`https://api.disneyapi.dev/character?page=${page}`)
+        // console.log(data.data)
         setDisneyChar(data.data)
       } catch (err) {
         setHasError({ error: true, message: err.message })
@@ -69,7 +69,7 @@ const Characters = () => {
         {disneyChar.length ?
           <>
             <Row>
-              {disneyChar.map((charDis, i) => {
+              {disneyChar.map(charDis => {
                 const { name, imageUrl, _id } = charDis
                 return (
                   <Col key={_id} sm="6" md="4" lg="3" className="disChar mb-4">

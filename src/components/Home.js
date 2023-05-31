@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import disneyLogo from './assets/disneyLogo.png'
 
 const Home = () => (
-  <>
+  <div className="home">
     <div className="logo text-center">
       <div className="logo-overlay">
         <div className="dis-logo">
@@ -21,7 +21,7 @@ const Home = () => (
     <div className="home-btn">
       <Link to="Characters" className="btn">Find Character</Link>
     </div>
-  </>
+  </div>
 )
 
 export default Home
