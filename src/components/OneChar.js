@@ -19,14 +19,13 @@ const OneChar = () => {
   useEffect(() => {
     const getOneChar = async () => {
       try {
-        const { data } = await axios.get(`https://api.disneyapi.dev/characters/${disneyId}`)
+        const { data } = await axios.get(`https://api.disneyapi.dev/character/${disneyId}`)
         setChar(data)
         console.log(data)
       } catch (err) {
         setHasError({ error: true, message: err.message })
       }
     }
-    // }
     getOneChar()
   }, [disneyId])
 
@@ -42,24 +41,24 @@ const OneChar = () => {
               <div className="img-name">
                 <Col md="5">
                   <div className="char-img">
-                    <img className="w-100" src={char.imageUrl} alt={disneyLogo} />
+                    <img className="w-100" src={char.data.imageUrl} alt={disneyLogo} />
                   </div>
                 </Col>
                 <Col md="5" className="name-info">
                   <div className="other-info-name">
-                    <h1><em className='name text-center'>{char.name}</em></h1>
+                    <h1><em className='name text-center'>{char.data.name}</em></h1>
                   </div>
                 </Col>
               </div>
             </Row>
             <div className="other-info">
-              {char.films.length ?
+              {char.data.films.length ?
                 <Row>
                   <Col>
                     <div md="5">
                       <h5 >Films: </h5>
                       <ul className='films-display'>
-                        {char.films.map((film, _id) => (
+                        {char.data.films.map((film, _id) => (
                           <li key={_id}><em>
                             {film}
                           </em></li>
@@ -71,13 +70,13 @@ const OneChar = () => {
                 :
                 ''
               }
-              {char.parkAttractions.length ?
+              {char.data.parkAttractions.length ?
                 <Row>
                   <Col>
                     <div md="5">
                       <h5>Park Attractions: </h5>
                       <ul className='park-display'>
-                        {char.parkAttractions.map((park, _id) => (
+                        {char.data.parkAttractions.map((park, _id) => (
                           <li key={_id}><em>
                             {park}
                           </em></li>
@@ -89,13 +88,13 @@ const OneChar = () => {
                 :
                 ''
               }
-              {char.shortFilms.length ?
+              {char.data.shortFilms.length ?
                 <Row>
                   <Col>
                     <div md="5">
                       <h5>Short Films: </h5>
                       <ul className='shortFilms-display'>
-                        {char.shortFilms.map((sFilm, _id) => (
+                        {char.data.shortFilms.map((sFilm, _id) => (
                           <li key={_id}><em>
                             {sFilm}
                           </em></li>
@@ -107,13 +106,13 @@ const OneChar = () => {
                 :
                 ''
               }
-              {char.tvShows.length ?
+              {char.data.tvShows.length ?
                 <Row>
                   <Col>
                     <div md="5">
                       <h5>TV Shows: </h5>
                       <ul className='tvShows-display'>
-                        {char.tvShows.map((show, _id) => (
+                        {char.data.tvShows.map((show, _id) => (
                           <li key={_id}><em>
                             {show}
                           </em></li>
@@ -125,13 +124,13 @@ const OneChar = () => {
                 :
                 ''
               }
-              {char.videoGames.length ?
+              {char.data.videoGames.length ?
                 <Row>
                   <Col>
                     <div md="5">
                       <h5>Video Games: </h5>
                       <ul className='games-display'>
-                        {char.videoGames.map((games, _id) => (
+                        {char.data.videoGames.map((games, _id) => (
                           <li key={_id}><em>
                             {games}
                           </em></li>

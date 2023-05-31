@@ -21,8 +21,8 @@ const Characters = () => {
   useEffect(() => {
     const AllChar = async () => {
       try {
-        const { data } = await axios.get(`https://api.disneyapi.dev/characters?page=${page}`)
-        console.log(data.data)
+        const { data } = await axios.get(`https://api.disneyapi.dev/character?page=${page}`)
+        // console.log(data.data)
         setDisneyChar(data.data)
       } catch (err) {
         setHasError({ error: true, message: err.message })
