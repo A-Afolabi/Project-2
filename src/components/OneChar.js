@@ -34,7 +34,7 @@ const OneChar = () => {
       <div className="disney-logo text-center">
         <img src={disneyLogo} alt="disney" />
       </div>
-      <Container className="mt-4">
+      <Container className="content mt-4">
         {char ?
           <div className="char-card">
             <Row>
