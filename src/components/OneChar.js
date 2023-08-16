@@ -15,13 +15,15 @@ const OneChar = () => {
 
   const { disneyId } = useParams()
   // console.log(disneyId)
+  // console.log(Boolean(disneyId === page))
+  // console.log(page)
 
   useEffect(() => {
     const getOneChar = async () => {
       try {
         const { data } = await axios.get(`https://api.disneyapi.dev/character/${disneyId}`)
         setChar(data)
-        console.log(data)
+        // console.log(data)
       } catch (err) {
         setHasError({ error: true, message: err.message })
       }

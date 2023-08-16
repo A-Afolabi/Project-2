@@ -15,11 +15,14 @@ const Characters = () => {
   const [disneyChar, setDisneyChar] = useState([])
   const [hasError, setHasError] = useState(false)
   const [page, setPage] = useState(1)
+  // const [everyChar, setEveryChar] = useState([])
+  // const [filterList, setFilterList] = useState([])
+  // const [filteredChar, setFilteredChar] = useState([])
 
   const currentPage = page
 
   useEffect(() => {
-    const AllChar = async () => {
+    const allChar = async () => {
       try {
         const { data } = await axios.get(`https://api.disneyapi.dev/character?page=${page}`)
         // console.log(data.data)
@@ -28,10 +31,8 @@ const Characters = () => {
         setHasError({ error: true, message: err.message })
       }
     }
-    AllChar()
+    allChar()
   }, [page])
-
-
 
   const nextPage = () => {
     page < 149 && setPage(page + 1)
@@ -40,7 +41,27 @@ const Characters = () => {
     page > 1 && setPage(page - 1)
   }
 
-  const handleSubmit = () => {
+  // useEffect(() => {
+  //   const getAllChar = async () => {
+  //     try {
+  //       const { data } = await axios.get('http://api.disneyapi.dev/character?pageSize=3750')
+  //       // console.log(data.data)
+  //       setEveryChar(data.data)
+  //       // const foundChar = []
+  //       // for (let i = 0; i < data.data.length; i++) {
+  //       //   if (data.data[i].name.toLowerCase()) {
+  //       //     foundChar.push(data.data[i])
+  //       //   }
+  //       // }
+  //       // console.log(foundChar)
+  //     } catch (err) {
+  //       setHasError({ error: true, message: err.message })
+  //     }
+  //   }
+  //   getAllChar()
+  // }, [everyChar])
+
+  const handleSearch = () => {
 
   }
 
@@ -55,8 +76,8 @@ const Characters = () => {
           :
           <button disabled className="btn" onClick={prevPage}>Previous Page</button>
         }
-        <form onSubmit={handleSubmit}>
-          <input type="text" maxLength='500' id="disney-Id" placeholder=" Search Character..." />
+        <form onChange={handleSearch}>
+          <input type="text" id="disneyId" placeholder=" Search Character..." />
           {/* Maybe another input */}
         </form>
         {currentPage !== 149 ?
@@ -86,6 +107,7 @@ const Characters = () => {
                   </Col>
                 )
               })}
+              {/* } */}
             </Row>
             <Row>
               <div className="pages">

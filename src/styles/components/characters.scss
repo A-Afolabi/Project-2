@@ -1,8 +1,16 @@
+body {
+  height: 100vh;
+  width: 100vw
+}
 .charsPageContain{
   h2{
+  // display: flex;
+  // height: 100vh;
+  // width: 100vw;
+  justify-content: center;
   padding-top: 15%;
-  padding-bottom: 50%;
-}
+  // padding-bottom: 40%;
+  }
 }
 .disney-logo{
   padding: 5vh;
@@ -14,7 +22,7 @@
 form{
   display: flex;
   justify-content: center;
-  #disney-Id{
+  #disneyId{
     width: 70vh;
     height: 5vh;
     margin-left: 20px;
@@ -35,12 +43,6 @@ form{
   img{
     border-radius: 20%;
   }
-}
-h2{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
 }
 .disChar{
   a{
@@ -91,7 +93,7 @@ h2{
     display: flex;
     justify-content: center;
   form{
-    #disney-Id{
+    #disneyId{
       width: 60vh;
       height: 5vh;
       border-radius: 10px;
@@ -107,7 +109,7 @@ h2{
     display: flex;
     justify-content: center;
     form{
-      #disney-Id{
+      #disneyId{
         width: 60vh;
         height: 5vh;
         border-radius: 10px;

@@ -1,6 +1,8 @@
 .home {
+    height: 100vh;
+    width: 100vw;
 .dis-logo {
-  padding: 5vh;
+  padding: 4vh;
 }
 .lead {
   font-weight: bold;
@@ -23,12 +25,12 @@
     align-items: center;
     align-content: center;
   }
-  padding-top: 5vh;
-  padding-bottom: 10%;
+  padding-top: 7vh;
+  // padding-bottom: 10%;
 }
 .dis-logo{
   img{
-    padding-top: 5vh;
+    padding-top: 4vh;
     width:60%;
     @media (max-width: 550px) {
       width: 100%;
