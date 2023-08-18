@@ -1,15 +1,8 @@
-body {
-  height: 100vh;
-  width: 100vw
-}
 .charsPageContain{
+  background-color: rgba(2, 51, 155, 0.838);
   h2{
-  // display: flex;
-  // height: 100vh;
-  // width: 100vw;
   justify-content: center;
   padding-top: 15%;
-  // padding-bottom: 40%;
   }
 }
 .disney-logo{
@@ -70,11 +63,8 @@ form{
   }
   display: flex;
   align-items: center;
-  // flex-wrap: nowrap;
   padding-top: 5vh;
   padding-bottom: 5%;
-  // align-content: space-around;
-  
 }
 .search{
   .btn {
@@ -127,4 +117,9 @@ p{
   justify-content: center;
   align-items: center;
   margin: 0;
+}
+.mb-3{
+  display: flex;
+  justify-content: center;
+  height: 100vh;
 }

@@ -107,7 +107,6 @@ const Characters = () => {
                   </Col>
                 )
               })}
-              {/* } */}
             </Row>
             <Row>
               <div className="pages">
@@ -130,7 +129,7 @@ const Characters = () => {
             {hasError.error ? 'Hmm...This doesn\'t look like Disney characters 🤔. Somethings gone wrong' : 'Loading...'}
           </h2>
         }
-      </Container>
+      </Container >
     </div >
   )
 }
